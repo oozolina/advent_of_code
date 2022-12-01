@@ -21,5 +21,8 @@ public class ForRapidTesting {
 //        }
 //        scanner.close();
 //        return cleanedData;
+
+        //         List<String> myData = Files.readAllLines(Paths.get(path));
+
     }
 }
