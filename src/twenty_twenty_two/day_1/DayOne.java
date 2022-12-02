@@ -42,7 +42,6 @@ public class DayOne {
         return totalCaloriesByElf;
     }
 
-
     public static ArrayList<ArrayList<String>> getDataFromFile(String path) throws IOException {
         List<String> myData = Files.readAllLines(Paths.get(path));
         ArrayList<ArrayList<String>> cleanedData = new ArrayList<>();

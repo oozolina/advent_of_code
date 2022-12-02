@@ -29,6 +29,4 @@ public class DayOneAfterRefactoring {
         System.out.println("Part 2: " + (caloriesPerElf.get(0) + caloriesPerElf.get(1) + caloriesPerElf.get(2)));
         System.out.println("Part 2: " + caloriesPerElf.stream().mapToInt(Integer::intValue).limit(3).sum());
     }
-
-
 }
