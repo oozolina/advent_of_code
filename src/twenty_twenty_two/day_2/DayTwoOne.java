@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DayTwo {
+public class DayTwoOne {
     public static void main(String[] args) throws IOException {
         var myData = Files.readAllLines(Paths.get("./src/twenty_twenty_two/day_2/data.txt"));
         ArrayList<Integer> allCompsScore = new ArrayList<>();
