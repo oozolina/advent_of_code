@@ -21,14 +21,24 @@ public class DayThreeOne {
             String leftCompartment = backpack.substring(backpack.length() / 2);
             char commonLetter = '0';
 
-            outerLoop:
+            // Initial variant
+//            outerLoop:
+//            for (int i = 0; i < rightCompartment.length(); i++) {
+//                for (int j = 0; j < leftCompartment.length(); j++) {
+//                    if (rightCompartment.charAt(i) == leftCompartment.charAt(j)) {
+//                        commonLetter = leftCompartment.charAt(j);
+//                        commonCharList.add(commonLetter);
+//                        break outerLoop;
+//                    }
+//                }
+//            }
+
+            // after refactoring
             for (int i = 0; i < rightCompartment.length(); i++) {
-                for (int j = 0; j < leftCompartment.length(); j++) {
-                    if (rightCompartment.charAt(i) == leftCompartment.charAt(j)) {
-                        commonLetter = leftCompartment.charAt(j);
-                        commonCharList.add(commonLetter);
-                        break outerLoop;
-                    }
+                char c = rightCompartment.charAt(i);
+                if (leftCompartment.contains(String.valueOf(c))) {
+                    commonCharList.add(c);
+                    break;
                 }
             }
         }

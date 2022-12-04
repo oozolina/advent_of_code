@@ -18,22 +18,35 @@ public class DayThreeTwo {
         ArrayList<Character> commonCharList = new ArrayList<>();
         HashMap<Character, Integer> conversionsCost = createPriorityConversion();
 
-        for (var backpack : elfGroups) {
-            String firstElf = backpack.get(0);
-            String secondElf = backpack.get(1);
-            String thirdElf = backpack.get(2);
-            char commonLetter = '0';
+        for (var elfSquad : elfGroups) {
+            // Initial variant
+//            String firstElf = elfSquad.get(0);
+//            String secondElf = elfSquad.get(1);
+//            String thirdElf = elfSquad.get(2);
+//            char commonLetter = '0';
 
-            outerLoop:
+//            outerLoop:
+//            for (int i = 0; i < firstElf.length(); i++) {
+//                for (int j = 0; j < secondElf.length(); j++) {
+//                    for (int k = 0; k < thirdElf.length(); k++) {
+//                        if (firstElf.charAt(i) == secondElf.charAt(j) && thirdElf.charAt(k) == secondElf.charAt(j)) {
+//                            commonLetter = thirdElf.charAt(k);
+//                            commonCharList.add(commonLetter);
+//                            break outerLoop;
+//                        }
+//                    }
+//                }
+//            }
+
+            // After refactoring
+            String firstElf = elfSquad.get(0);
+            String secondElf = elfSquad.get(1);
+            String thirdElf = elfSquad.get(2);
             for (int i = 0; i < firstElf.length(); i++) {
-                for (int j = 0; j < secondElf.length(); j++) {
-                    for (int k = 0; k < thirdElf.length(); k++) {
-                        if (firstElf.charAt(i) == secondElf.charAt(j) && thirdElf.charAt(k) == secondElf.charAt(j)) {
-                            commonLetter = thirdElf.charAt(k);
-                            commonCharList.add(commonLetter);
-                            break outerLoop;
-                        }
-                    }
+                char c = firstElf.charAt(i);
+                if(secondElf.contains(String.valueOf(c)) && thirdElf.contains(String.valueOf(c))){
+                    commonCharList.add(c);
+                    break;
                 }
             }
         }
